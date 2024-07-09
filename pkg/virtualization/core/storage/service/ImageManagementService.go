@@ -185,7 +185,7 @@ func (ims *ImageManagementService) CompactDisk(path string, mode constant.Virtua
 
 	inparams := wmi.WmiMethodParamCollection{}
 	inparams = append(inparams, wmi.NewWmiMethodParam("Path", path))
-	inparams = append(inparams, wmi.NewWmiMethodParam("Mode", mode))
+	inparams = append(inparams, wmi.NewWmiMethodParam("Mode", int(mode)))
 
 	outparams := wmi.WmiMethodParamCollection{
 		wmi.NewWmiMethodParam("Job", nil),
